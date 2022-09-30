@@ -14,7 +14,8 @@ const currentPage = document.querySelectorAll(".current-page");
 const watchlistContainer = document.querySelector(".watchlist-container");
 // watchlist btn
 const watchlistBtn = document.querySelector(".fav-btn");
-
+// Corazon de movies
+const movieFav = document.querySelectorAll(".fav-btn");
 // const deleteBtn = document.querySelector(".delete-btn");
 // ! Seteando local storage
 let watchLocal = JSON.parse(localStorage.getItem("watch")) || [];
@@ -45,7 +46,7 @@ const requestMovies = async() => {
         </div>
         <div class="movie-btn">
             <button class="btn-add" data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}">
-            <p class="btn-text" data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}">Añadir a favoritos</p>
+            <p class="btn-text" data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}"><i class="fa-solid fa-heart fav-btn"></i></p>
     </button>
         </div>
     `;
@@ -129,12 +130,9 @@ const addProduct = (e) => {
         release_date: e.target.dataset.year,
         poster_path: e.target.dataset.img,
     };
-    // console.log(peli);
     const existsInWatchlist = watchlist.find((item) => item.id === peli.id);
     if (existsInWatchlist) {
-        return;
-    } else if (watchlist.length > 15) {
-        alert("Llegaste al límite de objetos en tu watchlist");
+        alert("Esta pelicula ya se encuentra en tu watchlist");
         return;
     } else {
         watchlist = [...watchlist, {...peli }];
@@ -170,10 +168,11 @@ const deteleWatchlist = (e) => {
         }
     }
 };
-
+const navBar = document.querySelector(".navbar");
 // Favorite color
 const favColor = () => {
     watchlistBtn.classList.toggle("red-btn");
+    navBar.classList.toggle("open-watchlist");
 };
 
 // Funcion que inicializa todas las demas funciones
