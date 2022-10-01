@@ -224,7 +224,7 @@ body {
 
 .watchlist-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 2fr);
   grid-template-rows: repeat(auto-fill);
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
@@ -234,7 +234,7 @@ body {
   background: var(--bg-color);
   box-shadow: -1px 15px 5px 1px rgba(29, 35, 54, 0.75);
   position: absolute;
-  padding: 2rem;
+  padding: 3rem;
   width: 100%;
   z-index: 1;
   border-radius: 10px;
@@ -288,4 +288,37 @@ body {
 
 .red-btn {
   color: red;
+}
+
+@media (max-width: 1550px) {
+  .watchlist-container {
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: repeat(auto-fill);
+  }
+}
+@media (max-width: 1100px) {
+  .watchlist-container {
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(auto-fill);
+  }
+  .movies-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill);
+  }
+}
+@media (max-width: 900px) {
+  .movies-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill);
+  }
+}
+@media (max-width: 750px) {
+  .watchlist-container {
+    grid-template-columns: repeat(1, 2fr);
+    grid-template-rows: repeat(auto-fill);
+  }
+  .movies-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill);
+  }
 }/*# sourceMappingURL=style.css.map */

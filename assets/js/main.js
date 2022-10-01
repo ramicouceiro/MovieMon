@@ -45,8 +45,8 @@ const requestMovies = async() => {
             <p>(${release_date})</p>
         </div>
         <div class="movie-btn">
-            <button class="btn-add" data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}">
-            <p class="btn-text" data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}"><i class="fa-solid fa-heart fav-btn"></i></p>
+            <button class="btn-add btn-add-${id}" data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}" id="btn-add-${id}">
+            <i class="fa-solid fa-heart fav-btn"></i>
     </button>
         </div>
     `;
@@ -148,6 +148,19 @@ const watchlistLength = () => {
         watchlistContainer.innerHTML = `<p>Tu watchlist esta vacia`;
     }
 };
+// Fav Color
+const favColored = (e) => {
+    if (!e.target.classList.contains("btn-add")) return;
+    const peli = {
+        id: e.target.dataset.id,
+        title: e.target.dataset.title,
+        release_date: e.target.dataset.year,
+        poster_path: e.target.dataset.img,
+    };
+    const favBtn = document.getElementById(`btn-add-${peli.id}`);
+    favBtn.classList.add("faved");
+};
+
 // Delete watchlist
 const deteleWatchlist = (e) => {
     if (e.target.classList.contains("fa-trash-can")) {
@@ -155,7 +168,6 @@ const deteleWatchlist = (e) => {
             (item) => item.id === e.target.dataset.id
         );
         console.log(existsInWatchlist);
-
         if (existsInWatchlist) {
             if (window.confirm("Desea eliminar esta pelicula de su watchlist?")) {
                 watchlist = watchlist.filter(
@@ -186,5 +198,6 @@ const init = () => {
     prevPage();
     nextPage();
     products.addEventListener("click", addProduct);
+    products.addEventListener("click", favColored);
 };
 init();
