@@ -45,7 +45,7 @@ const requestMovies = async() => {
             <p>(${release_date})</p>
         </div>
         <div class="movie-btn">
-            <button class="btn-add btn-add-${id}" data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}" id="btn-add-${id}">
+            <button class="btn-add data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}" id="btn-add-${id}">
             <i class="fa-solid fa-heart fav-btn"></i>
     </button>
         </div>
