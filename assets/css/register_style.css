@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap");
+:root {
+  --bg-color: linear-gradient( 90deg, rgba(40, 52, 75, 1) 0%, rgba(34, 40, 61, 1) 100%);
+  --nav-color: #22283d;
+  --card-color: #2a334d;
+  --white-main: #ffffff;
+  --btn-color: #52a9cc;
+  --btn-hover: #72b8d4;
+  --page-btn-color: #6d7286;
+  --thin: 100;
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+.login {
+  background: var(--bg-color);
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  background: var(--card-color);
+  border-radius: 10px;
+  width: 800px;
+  height: 600px;
+  box-shadow: 0px 0px 18px 0px rgb(29, 35, 54);
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50%;
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--white-main);
+}
+.form input {
+  margin: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.form input:focus {
+  outline: none;
+}
+
+.terminos {
+  margin-top: 2rem;
+}
+
+.img-container {
+  border-radius: 0 10px 10px 0;
+  height: 100%;
+  min-width: 50%;
+  background-image: linear-gradient(transparent, black), url("../img/piratas.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-login {
+  color: var(--white-main);
+  border: none;
+  background: var(--btn-color);
+}
+
+.btn-login:hover {
+  transition: 0.5s;
+  background: var(--btn-hover);
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.title span {
+  color: var(--btn-color);
+}
+
+.register-btn {
+  text-align: center;
+}
+.register-btn a {
+  color: var(--white-main);
+}
+.register-btn a:hover {
+  color: var(--btn-hover);
+}
+.register-btn p {
+  margin: 10px;
+}
+
+@media (max-width: 740px) {
+  .img-container {
+    display: none;
+  }
+  .form-container {
+    min-width: 100%;
+  }
+}/*# sourceMappingURL=register_style.css.map */
