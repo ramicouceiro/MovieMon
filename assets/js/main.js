@@ -35,7 +35,13 @@ const requestMovies = async() => {
         // console.log(movie);
         const div = document.createElement("div");
         div.classList.add("movie");
-        div.innerHTML = `
+        const existsInWhatchlist = watchLocal
+            .map((peli) => {
+                return parseInt(peli.id, 10);
+            })
+            .includes(movie.id);
+        div.innerHTML =
+            `
         
         <div class="movie-img">
             <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" alt="" />
@@ -45,7 +51,9 @@ const requestMovies = async() => {
             <p>(${release_date})</p>
         </div>
         <div class="movie-btn">
-            <button class="btn-add" data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}" id="btn-add-${id}">
+            <button class="btn-add ` +
+            (existsInWhatchlist ? "faved" : "") +
+            `" data-id="${id}" data-title="${title}" data-img="https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}" data-year="${release_date}" id="btn-add-${id}">
             <i class="fa-solid fa-heart fav-btn" ></i>
     </button>
         </div>
@@ -183,11 +191,14 @@ const favedBTN = (e) => {
 };
 // Funcion que inicializa todas las demas funciones
 const init = () => {
-    document.addEventListener("DOMContentLoaded", renderWatchlist(watchLocal));
+    document.addEventListener;
+    document.addEventListener("DOMContentLoaded", () => {
+        requestMovies(popularURL);
+        renderWatchlist(watchLocal);
+    });
     watchlistBtn.addEventListener("click", showWatchlist);
     watchlistContainer.addEventListener("click", deteleWatchlist);
     watchlistBtn.addEventListener("click", favColor);
-    requestMovies(popularURL);
     prevPage();
     nextPage();
     products.addEventListener("click", addProduct);
