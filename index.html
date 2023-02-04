@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link CSS -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>MovieMon</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar">
-            <div class="nav-logo">
-                <!-- <img src="./assets/img/logo.png" alt="" /> -->
-            </div>
-            <div class="nav-buttons">
-                <ul>
-                    <li><a href="#">INICIO</a></li>
-                    <li><a href="./login.html">INICIAR SESION</a></li>
-                    <li><i class="fa-solid fa-heart fav-btn"></i></li>
-                </ul>
-            </div>
-            <div class="watchlist-container show animate__animated animate__slideInDown"></div>
-        </nav>
-        <div class="hero-container">
-            <div class="hero-text">
-                <h1>Movie<span>Mon</span>,</h1>
-                <h3>el lugar de tus películas.</h3>
-            </div>
-            <div class="hero-img"></div>
+      <nav class="navbar">
+        <div class="nav-logo">
+          <!-- <img src="./assets/img/logo.png" alt="" /> -->
         </div>
+        <div class="nav-buttons">
+          <ul>
+            <li><a href="#">INICIO</a></li>
+            <li><a href="./login.html">INICIAR SESION</a></li>
+            <li><i class="fa-solid fa-heart fav-btn"></i></li>
+          </ul>
+        </div>
+        <div
+          class="watchlist-container show animate__animated animate__slideInDown"
+        ></div>
+      </nav>
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Movie<span>Mon</span>,</h1>
+          <h3>el lugar de tus películas.</h3>
+        </div>
+        <div class="hero-img"></div>
+      </div>
     </header>
     <section class="watchlist-section"></section>
     <section class="hero-section"></section>
     <section class="movies-section">
-        <div class="movies-title">
-            <h1>Peliculas Populares</h1>
-            <div class="page-count">
-                <button id="btn-prev" class="page-btn btn-prev disabled">-</button>
-                <p class="current-page"></p>
-                <button class="page-btn btn-next">+</button>
-            </div>
-        </div>
-        <div class="movies-container"></div>
+      <div class="movies-title">
+        <h1>Peliculas Populares</h1>
         <div class="page-count">
-            <button class="page-btn btn-prev disabled">-</button>
-            <p class="current-page"></p>
-            <button class="page-btn btn-next">+</button>
+          <button id="btn-prev" class="page-btn btn-prev disabled">-</button>
+          <p class="current-page"></p>
+          <button class="page-btn btn-next">+</button>
         </div>
+      </div>
+      <div class="movies-container"></div>
+      <div class="page-count">
+        <button class="page-btn btn-prev disabled">-</button>
+        <p class="current-page"></p>
+        <button class="page-btn btn-next">+</button>
+      </div>
     </section>
     <script src="./assets/js/main.js"></script>
-</body>
-
+  </body>
 </html>
